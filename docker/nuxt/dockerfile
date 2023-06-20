@@ -7,4 +7,6 @@ WORKDIR /app
 RUN apt-get update \
     && apt-get install -y \
     git \
-    vim
+    vim \
+    && npm install -g npm@latest nuxi nuxt3 \
+    npm install nuxt@3.4.1

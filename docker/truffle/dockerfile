@@ -1,0 +1,7 @@
+FROM node:18-bullseye-slim
+
+ARG UID=1000
+RUN  npm install -g npm && chgrp -R node /usr/ && chmod 770 -R /usr && chmod 770 -R /srv
+USER ${UID}
+
+RUN npm install -g truffle

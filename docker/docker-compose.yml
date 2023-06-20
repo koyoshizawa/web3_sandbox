@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  nuxt:
+    container_name: nuxt
+    build: ./nuxt
+    volumes:
+      - ../front:/app:cached
+      - nuxt_node_modules:/app/node_modules
+    ports:
+      - "80:3000"
+      - "24678:24678"
+    tty: true
+    environment:
+      - HOST=0.0.0.0
+      - port=80
+      - CHOKIDAR_USEPOLLING=true
+    command: sh -c "npm run dev"
+    # ↑初回のみコメントアウト
+    # https://qiita.com/A-Kira/items/5ce3e1bff34e179ebbc2
+    # さらに、npm install nuxt@3.4.1 でバージョン下げる必要あり
+  
+  truffle:
+    container_name: truffle
+    build: ./truffle
+    ports:
+      - "8888:8888"
+    tty: true
+    volumes:
+      - ../chain:/srv/:cached
+  
+  ganache:
+    container_name: ganache
+    build: ./ganache
+    ports:
+      - "8545:8545"
+    stdin_open: true
+    tty: true
+
+volumes:
+  nuxt_node_modules:
