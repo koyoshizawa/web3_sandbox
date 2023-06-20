@@ -1,2 +1,14 @@
-nuxt3をdockerで
+## nuxt3をdockerで
 https://zenn.dev/szn/articles/nuxt-3-with-docker-compose
+
+## nuxt3 docker error対応
+https://qiita.com/A-Kira/items/5ce3e1bff34e179ebbc2
+
+## truffle ganache dockerで
+https://qiita.com/PoKoPoKoTa2ry/items/452b8c5e021924de4cba
+
+★ つまり所
+もろもろの権限が足りない部分があるのはちょっとずつ付与 ```chmod a+w 対象```
+root権限でコンテナ立ち上げ docker-compose exec --user root コンテナ名 /bin/bash
+truffleコマンドは/srvで
+
