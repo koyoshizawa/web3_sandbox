@@ -12,3 +12,5 @@ https://qiita.com/PoKoPoKoTa2ry/items/452b8c5e021924de4cba
 root権限でコンテナ立ち上げ docker-compose exec --user root コンテナ名 /bin/bash
 truffleコマンドは/srvで
 
+ganacheのchainIDのデフォルトは1337
+https://ethereum.stackexchange.com/questions/91072/setup-ganache-with-metamask-what-and-where-is-a-chain-id
